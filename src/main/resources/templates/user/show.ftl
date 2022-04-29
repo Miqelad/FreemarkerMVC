@@ -32,7 +32,7 @@
         <#list filerload as flp>
         <#if flp??>
             <div>
-            <img src="/file/img/${flp.file}">
+            <img src="/img/${flp.file}">
 
             </div>
         </#if>
