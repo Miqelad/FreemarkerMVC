@@ -12,8 +12,11 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //все запросы к сервису по пути имг/ и что-то еще буддет перенаправлять попути
-        registry.addResourceHandler("http://localhost:8080/file/img/**")
+        registry.addResourceHandler("/img/**")
                 //вот этому
                 .addResourceLocations("file://" + uploadPath + "/");
+        registry.addResourceHandler("/static/**")
+                //classpath - означает дерево проекта
+                .addResourceLocations("classpath:/static/");
     }
 }
